@@ -42,6 +42,6 @@ hive-os = the engine/template (this repo, open source)
 - **P1:** populate `skills/` with the actual shippable skill folders (currently manifest-only).
 - **P2:** `install.sh` (clone -> symlink skills into ~/.claude -> init), GitHub repo, public README polish.
 - **P3:** wire AIOX as the optional SDLC plug-in module under `harness/sdlc/`.
-- **P4:** the two flavors — `hive-os` (this) + a personal instance as paciente zero. Dogfood, then onboard Miguel.
+- **P4:** the two flavors: `hive-os` (this) + a personal instance as patient zero. Dogfood it, then onboard the first external user.
 ```
 ```

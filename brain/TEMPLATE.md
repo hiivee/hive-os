@@ -1,4 +1,4 @@
-# brain/ME.md — who you are (private, gitignored)
+# brain/ME.md · who you are (private, gitignored)
 
 > `hive init` copies this to `brain/ME.md`. Fill it in. It overrides anything in `CLAUDE.base.md`.
 > This file NEVER goes to git (it's in `.gitignore`). Your secrets, clients, numbers stay here.

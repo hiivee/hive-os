@@ -1,4 +1,4 @@
-# hive-os — secrets NEVER enter git. Open source = zero credentials.
+# hive-os: secrets NEVER enter git. Open source = zero credentials.
 .env
 .env.*
 *.key

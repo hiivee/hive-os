@@ -114,8 +114,8 @@ about being complete is worse than an honest partial one.
   route(/x)  ->  handler.ts:42  ->  userService.create()  ->  db/users.ts:88
 
 ### Anchors (proof)
-- `path:line` — <5-word reason this matters>
-- `path:line` — <...>
+- `path:line` · <5-word reason this matters>
+- `path:line` · <...>
 (max ~8. These let the coordinator jump straight in. Not a file dump.)
 
 ### Gaps / not confirmed
@@ -171,7 +171,7 @@ and skip the scaffolding. Match output weight to the question.
 
 ## Companion templates in this harness
 
-- `reviewer.md` — dimension-based judge-panel member (SQL / Auth / Infra / ML /
+- `reviewer.md` · dimension-based judge-panel member (SQL / Auth / Infra / ML /
   API / Frontend / Cost lens), blind parallel pass then debate, for the
   verify-the-CHANGE step. Scouts find; reviewers judge.
 - the coordinator (orchestration layer) decides single-threaded and is the only

@@ -1,9 +1,9 @@
 # CLAUDE.md · {{NAME}} · powered by hive-os
 
-> Base method of hive-os. Loaded in every project. This is the **discipline** — how the
+> Base method of hive-os. Loaded in every project. This is the **discipline**: how the
 > agent thinks, builds, ships, and reports. Your personal identity lives in `brain/ME.md`
-> (private, gitignored). Replace `{{NAME}}` / `{{BRAND}}` on `hive init`. Edit freely after —
-> this is yours now.
+> (private, gitignored). Replace `{{NAME}}` / `{{BRAND}}` on `hive init`. Edit freely after.
+> This is yours now.
 
 ---
 
@@ -19,7 +19,7 @@
 
 ---
 
-## 🦴 The Spine (the fixed loop — every repo, every task)
+## 🦴 The Spine (the fixed loop, every repo, every task)
 
 ```
 1. brainstorm   → before building anything non-trivial (intent → design → OK)
@@ -29,9 +29,9 @@
 5. wrapup       → single end-of-work button (learn → commit → push → deploy → notify)
 ```
 
-Skills fire **on trigger**, on demand — never "all skills always" (that's noise). The spine is
+Skills fire **on trigger**, on demand, never "all skills always" (that's noise). The spine is
 the only thing that's always on. `harness/` holds the heavy machinery (orchestration, subagents,
-verify loop) — reach for it when the task earns it, not by reflex.
+verify loop). Reach for it when the task earns it, not by reflex.
 
 ---
 
@@ -42,7 +42,7 @@ verify loop) — reach for it when the task earns it, not by reflex.
 2. **What the user receives:** WHERE it is · HOW it is · what needs their call. 3-6 lines.
    Not a dump of paths, schemas, function names, file lists. That's the work, not the news.
 3. **Flow-first, not interrogation.** Decide the obvious path, recommend with conviction, move.
-   Ask only when a decision is genuinely load-bearing — and lead with your recommendation, not a
+   Ask only when a decision is genuinely load-bearing, and lead with your recommendation, not a
    neutral menu. Never "want me to do X or Y?" for trivial calls.
 4. **Direct, with taste.** Disagree when you see a gap. Rank with conviction. Zero hedging.
 5. **Close on meaning.** End substantive answers on what it *means* (what it unlocks, what's still
@@ -70,7 +70,7 @@ Read before touching non-trivial code. Bias: caution > speed.
 The core truth (Cognition "don't build multi-agents" vs Anthropic multi-agent research, reconciled):
 
 > **Fan out to READ and VERIFY. Stay single-threaded to WRITE code.**
-> Parallel agents shine for search, review, research, audit — read-heavy, independent work where
+> Parallel agents shine for search, review, research, audit: read-heavy, independent work where
 > conclusions merge cleanly. They HURT for implementation: fragmented context, conflicting decisions,
 > merge hell. One writer, many scouts.
 
@@ -107,13 +107,13 @@ Full machinery + runnable scripts: `harness/orchestration/`. Subagent design: `h
 ## 🧰 Stack defaults (override in `brain/ME.md`)
 
 Web: TypeScript strict · React/Next App Router · Tailwind. Scripts: Node/Bun. Infra: your call.
-The harness is stack-agnostic — these are starting defaults, not law.
+The harness is stack-agnostic, these are starting defaults, not law.
 
 ---
 
 ## 🔗 Where things live
 
-- `brain/ME.md` — who you are (private, you fill it). Overrides anything here.
-- `harness/` — orchestration · subagents · verify · sdlc. The machinery.
-- `skills/MANIFEST.md` — which skills ship and why.
-- `bin/hive` — the CLI (`init · status · sync · onboard · doctor · wrapup`).
+- `brain/ME.md`: who you are (private, you fill it). Overrides anything here.
+- `harness/`: orchestration · subagents · verify · sdlc. The machinery.
+- `skills/MANIFEST.md`: which skills ship and why.
+- `bin/hive`: the CLI (`init · status · sync · onboard · doctor · wrapup`).

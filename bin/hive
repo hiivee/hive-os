@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# hive — the hive-os CLI. One command surface for the harness.
+# hive: the hive-os CLI. One command surface for the harness.
 set -euo pipefail
 
 HIVE_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -12,7 +12,7 @@ warn(){ printf "${c_red}!${c_off} %s\n" "$*"; }
 
 usage() {
   cat <<EOF
-${c_bold}hive${c_off} ${c_dim}v$VERSION${c_off} — your agent OS
+${c_bold}hive${c_off} ${c_dim}v$VERSION${c_off} · your agent OS
 
   ${c_bold}hive init${c_off}            seed this repo: CLAUDE.md + brain/ME.md from the base method
   ${c_bold}hive status${c_off}          what's installed: skills, harness, brain
@@ -29,7 +29,7 @@ cmd_init() {
   [ -z "$name" ] && { read -rp "Your name: " name; }
   [ -z "$brand" ] && { read -rp "Your brand (blank ok): " brand || true; }
   if [ -f "$HIVE_ROOT/CLAUDE.md" ]; then
-    warn "CLAUDE.md already exists — not overwriting. Edit it directly."
+    warn "CLAUDE.md already exists, not overwriting. Edit it directly."
   else
     sed -e "s/{{NAME}}/${name}/g" -e "s/{{BRAND}}/${brand:-$name}/g" \
       "$HIVE_ROOT/CLAUDE.base.md" > "$HIVE_ROOT/CLAUDE.md"
@@ -37,7 +37,7 @@ cmd_init() {
   fi
   if [ ! -f "$HIVE_ROOT/brain/ME.md" ]; then
     cp "$HIVE_ROOT/brain/TEMPLATE.md" "$HIVE_ROOT/brain/ME.md"
-    ok "brain/ME.md created (private, gitignored) — fill it in"
+    ok "brain/ME.md created (private, gitignored). Fill it in."
   fi
   say ""
   say "Next: open brain/ME.md, then run ${c_bold}hive status${c_off}."
@@ -49,8 +49,8 @@ cmd_status() {
   local hm; hm=$(find "$HIVE_ROOT/harness" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
   printf "  skills shipped   : %s\n" "$sk"
   printf "  harness modules  : %s\n" "$hm"
-  [ -f "$HIVE_ROOT/CLAUDE.md" ] && ok "CLAUDE.md seeded" || warn "CLAUDE.md missing — run hive init"
-  [ -f "$HIVE_ROOT/brain/ME.md" ] && ok "brain/ME.md present" || warn "brain/ME.md missing — run hive init"
+  [ -f "$HIVE_ROOT/CLAUDE.md" ] && ok "CLAUDE.md seeded" || warn "CLAUDE.md missing, run hive init"
+  [ -f "$HIVE_ROOT/brain/ME.md" ] && ok "brain/ME.md present" || warn "brain/ME.md missing, run hive init"
 }
 
 cmd_doctor() {
@@ -87,11 +87,11 @@ cmd_skills() {
 }
 cmd_wrapup() {
   say "End-of-work discipline (the spine, step 5):"
-  say "  1. learn   — capture what was non-obvious"
-  say "  2. commit  — conventional commit, your paths only"
-  say "  3. push    — only with confirmation"
-  say "  4. verify  — E2E proof before 'done'"
-  say "  5. notify  — update whiteboard.md + tell the team"
+  say "  1. learn   · capture what was non-obvious"
+  say "  2. commit  · conventional commit, your paths only"
+  say "  3. push    · only with confirmation"
+  say "  4. verify  · E2E proof before 'done'"
+  say "  5. notify  · update whiteboard.md + tell the team"
   say ""
   say "In Claude Code: just say 'wrapup'."
 }
