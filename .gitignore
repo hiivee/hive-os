@@ -1,0 +1,21 @@
+# hive-os — secrets NEVER enter git. Open source = zero credentials.
+.env
+.env.*
+*.key
+*.pem
+**/api-keys.md
+**/credentials.json
+**/.credentials.json
+**/tokens.json
+**/oauth-tokens/
+
+# user instance data (filled by `hive init`, stays private)
+brain/ME.md
+brain/*.private.md
+.hive/
+
+# runtime
+node_modules/
+.DS_Store
+*.log
+apps/
