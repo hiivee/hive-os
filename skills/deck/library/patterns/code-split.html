@@ -1,0 +1,22 @@
+<!-- PADRÃO: code-split · quando usar: Mostrar um trecho de código + explicação ao lado. · slots: .dm-pre código (spans .c .k .v) + texto/banner -->
+<section class="slide">
+  <div class="dm-eyebrow">Sobrescrita curta</div>
+  <h2 class="dm-h2">Título da seção</h2>
+  <div class="cols c2">
+    <div class="dm-pre"><span class="c">// caminho/do/arquivo.ext</span>
+funcao(
+  <span class="v">"parametro_principal"</span>,
+  <span class="v">"Descrição curta do que</span>
+<span class="v">   este parâmetro faz."</span>,
+  { opcao: <span class="k">tipo</span> },
+  async ({ opcao }) => {
+    <span class="c">// ... processa e retorna</span>
+    return { content: [...] };
+  }
+);</div>
+    <div class="stack">
+      <p>Explicação curta do trecho ao lado: o que ele faz, por que importa e onde encaixa no fluxo maior. Mencione <code>conceitoA</code> e <code>conceitoB</code> que aparecem no código.</p>
+      <div class="dm-banner ok"><div class="ic"><svg class="dm-ico"><use href="#i-package"/></svg></div><div><h3>O esqueleto é o mesmo</h3><p>Trocar este exemplo por outro caso é a mesma estrutura. Você aprende uma vez e aplica em qualquer variação.</p></div></div>
+    </div>
+  </div>
+</section>

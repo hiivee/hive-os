@@ -39,7 +39,7 @@ Engine improves -> every instance pulls the upgrade. Your `brain/` never leaves 
 ## Quick start
 
 ```bash
-git clone https://github.com/your-org/hive-os.git
+git clone https://github.com/hiivee/hive-os.git
 cd hive-os
 ./bin/hive init      # scans your environment, wires skills + subagents, writes config
 ./bin/hive status    # engine vs instance vs remote: the "nothing is lost" guardian

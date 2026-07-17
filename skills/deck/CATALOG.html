@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca de Slides · Catálogo</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0c100e; --surface:#141a17; --line:#23302a; --ink:#eef1ec; --ink2:#c4ccc1; --ink3:#8a958c; --accent:#A7DC5B; }
+  * { box-sizing:border-box; } body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter,sans-serif; }
+  header { padding:48px 6vw 24px; }
+  .eyebrow { font-family:'JetBrains Mono',monospace; font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:.8rem; }
+  .eyebrow::before { content:""; width:28px; height:2px; background:var(--accent); }
+  h1 { font-family:Poppins,sans-serif; font-weight:700; font-size:2.6rem; margin:.6rem 0 .4rem; letter-spacing:-.02em; }
+  .sub { color:var(--ink2); max-width:62ch; line-height:1.55; }
+  h2 { font-family:Poppins,sans-serif; font-size:1.3rem; margin:40px 6vw 0; }
+  .venda { color:#e9c46a; font-size:.85rem; margin:2px 6vw 0; font-family:'JetBrains Mono',monospace; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:1.4rem; padding:1.4rem 6vw 2rem; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .card img { width:100%; display:block; border-bottom:1px solid var(--line); background:#000; }
+  .meta { padding:1rem 1.2rem 1.2rem; }
+  .name { font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--accent); font-size:.92rem; }
+  .when { color:var(--ink2); font-size:.92rem; line-height:1.5; margin-top:.4rem; }
+  footer { color:var(--ink3); padding:0 6vw 60px; font-size:.85rem; }
+  code { font-family:'JetBrains Mono',monospace; color:var(--ink); background:#0a0d0b; padding:.1em .4em; border-radius:6px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Juan Carlo · Biblioteca de Slides</div>
+  <h1>Catálogo</h1>
+  <p class="sub">Peças prontas pra montar qualquer apresentação. Escolha, liste no manifesto, rode <code>node compile.mjs</code>. Aula = sem marca/venda. Pitch = libera os intros.</p>
+</header>
+
+<h2>Capas &amp; Encerramentos</h2>
+<div class="grid">
+  <div class="card"><img src="catalog-shots/cover-dots.png"><div class="meta"><div class="name">covers/cover-dots</div><div class="when">Capa de deck ou abertura. Fundo de pontinhos + glow verde + Poppins grande.</div></div></div>
+  <div class="card"><img src="catalog-shots/closing.png"><div class="meta"><div class="name">closings/closing</div><div class="when">Slide de fechamento de seção ou deck.</div></div></div>
+  <div class="card"><img src="catalog-shots/divider.png"><div class="meta"><div class="name">patterns/divider</div><div class="when">Divisória entre seções/partes. Número + título grande + lead.</div></div></div>
+</div>
+
+<h2>Padrões de conteúdo</h2>
+<div class="grid">
+  <div class="card"><img src="catalog-shots/agenda.png"><div class="meta"><div class="name">patterns/agenda</div><div class="when">Agenda ou índice de 4 a 8 itens numerados (2 colunas).</div></div></div>
+  <div class="card"><img src="catalog-shots/cards-3.png"><div class="meta"><div class="name">patterns/cards-3</div><div class="when">3 conceitos lado a lado; o card accent destaca o preferido.</div></div></div>
+  <div class="card"><img src="catalog-shots/flow.png"><div class="meta"><div class="name">patterns/flow</div><div class="when">Processo ou passo-a-passo de 4 a 7 etapas numeradas.</div></div></div>
+  <div class="card"><img src="catalog-shots/text-banner.png"><div class="meta"><div class="name">patterns/text-banner</div><div class="when">Um argumento (texto) + um destaque/régua (banner) ao lado.</div></div></div>
+  <div class="card"><img src="catalog-shots/two-banners.png"><div class="meta"><div class="name">patterns/two-banners</div><div class="when">Texto + benefício (verde) e custo/alerta (âmbar).</div></div></div>
+  <div class="card"><img src="catalog-shots/code-split.png"><div class="meta"><div class="name">patterns/code-split</div><div class="when">Mostrar um trecho de código + explicação ao lado.</div></div></div>
+  <div class="card"><img src="catalog-shots/comparison.png"><div class="meta"><div class="name">patterns/comparison</div><div class="when">Tabela comparativa A vs B em várias dimensões.</div></div></div>
+</div>
+
+<h2>Intros do Juan</h2>
+<p class="venda">⚠ VENDA / PITCH ONLY · nunca em material de ensino</p>
+<div class="grid">
+  <div class="card"><img src="catalog-shots/intro-juan-credibility.png"><div class="meta"><div class="name">intros/juan-credibility</div><div class="when">Abertura de pitch: bandeiras, Shark Tank, Vale do Silício, montagem de fotos.</div></div></div>
+  <div class="card"><img src="catalog-shots/intro-juan-proof-founders.png"><div class="meta"><div class="name">intros/juan-proof-founders</div><div class="when">Prova social: founders reais (avatar + @handle + bandeira + linha de prova).</div></div></div>
+</div>
+
+<footer>Biblioteca em <code>~/.claude/skills/deck/</code> · skill <code>deck</code> · compilador <code>compile.mjs</code> · design dark + pontinhos + Poppins + verde (padrão da casa).</footer>
+</body>
+</html>

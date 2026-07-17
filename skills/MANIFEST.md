@@ -133,3 +133,21 @@ Rules that keep the kit sharp:
   `brain/`, which is gitignored per instance.
 
 That is the whole extension model. One folder, one `SKILL.md`, on trigger.
+
+---
+
+## Departamentos empacotados (kit da Hive · 2026-06-16)
+
+Além do core de processo/eng acima, o kit agora traz as skills de operação da Hive
+(Tier 1 + Tier 2), carregadas on-trigger por descrição como qualquer outra:
+
+- **Vendas:** `sales-prep · sales-proposal · sales-icp · sales-objections · sales-outreach · sales-qualify · sales-followup · sales-research · sales-enablement · sales · sales-report · sales-report-pdf · sales-competitors · sales-contacts · cold-email · email-sequence`
+- **Marketing/conteúdo:** `copywriting · copywriter · copy-editing · content-strategy · content-planner · content-researcher · post-writer · social-content · marketing-psychology · marketing-ideas · launch-strategy`
+- **CRO:** `page-cro · form-cro · popup-cro · onboarding-cro · signup-flow-cro · paywall-upgrade-cro`
+- **SEO:** `seo-audit · ai-seo · schema-markup · programmatic-seo · site-architecture`
+- **Design/visual:** `design-md · deck · anthropic-frontend-design · ui-ux-pro-max · logo-designer · visual-storytelling · carousel-designer · brand-guidelines`
+- **Biz/pricing:** `pricing-strategy · business-growth · revops · c-level-advisor · cso · finance-advisor · competitor-alternatives`
+- **Eng disciplina:** `skill-creator · writing-skills · executing-plans · using-git-worktrees · subagent-driven-development · mcp-builder · eval-harness · devex-review`
+- **Ferramentas (Tier 2):** `composio-cli · slack-messaging · mcp-cli · generate-image · transcribe-video · make-pdf · pdf · hyperframes · hyperframes-cli · hyperframes-media · contract-review · document-generate · architecture-diagram`
+
+> Skills pessoais/de cliente/marca (steve*, mycelium*, ckm*, hive-prospect, casa, etc.) NÃO entram aqui: ficam no harness privado do Juan.
