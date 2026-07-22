@@ -14,8 +14,10 @@ usage() {
   cat <<EOF
 ${c_bold}hive${c_off} ${c_dim}v$VERSION${c_off} · your agent OS
 
+  ${c_bold}hive start${c_off}           begin the guided onboarding (the agent reads START.md and walks you through it)
   ${c_bold}hive init${c_off}            seed this repo: CLAUDE.md + brain/ME.md from the base method
-  ${c_bold}hive status${c_off}          what's installed: skills, harness, brain
+  ${c_bold}hive memory [install]${c_off}  install the memory layer: the four brains
+  ${c_bold}hive status${c_off}          what's installed: skills, harness, brain, memory
   ${c_bold}hive doctor${c_off}          health check: git, claude CLI, no staged secrets
   ${c_bold}hive onboard <name>${c_off}  scaffold a fresh instance for someone else
   ${c_bold}hive sync${c_off}            git pull latest harness
@@ -51,6 +53,14 @@ cmd_status() {
   printf "  harness modules  : %s\n" "$hm"
   [ -f "$HIVE_ROOT/CLAUDE.md" ] && ok "CLAUDE.md seeded" || warn "CLAUDE.md missing, run hive init"
   [ -f "$HIVE_ROOT/brain/ME.md" ] && ok "brain/ME.md present" || warn "brain/ME.md missing, run hive init"
+  # memory layer: report which of the four brains are present
+  local mem=0
+  [ -d "$HIVE_ROOT/brain/memory" ] && mem=$((mem+1))
+  command -v claude >/dev/null 2>&1 && claude plugin list 2>/dev/null | grep -qi 'claude-mem' && mem=$((mem+1))
+  command -v claude >/dev/null 2>&1 && claude mcp list 2>/dev/null | grep -qi 'semble' && mem=$((mem+1))
+  { command -v python3 >/dev/null 2>&1 && python3 -c 'import graphify' >/dev/null 2>&1; } && mem=$((mem+1))
+  printf "  memory brains    : %s/4\n" "$mem"
+  [ "$mem" -ge 1 ] && ok "memory layer present" || warn "memory not installed, run hive memory install"
 }
 
 cmd_doctor() {
@@ -71,6 +81,24 @@ cmd_onboard() {
     || { mkdir -p "$dest"; rsync -a --exclude '.git' --exclude 'brain/ME.md' "$HIVE_ROOT/" "$dest/"; }
   ok "instance scaffolded → $dest"
   say "Next: cd $dest && ./bin/hive init \"$who\""
+}
+
+cmd_start() {
+  say "${c_bold}Hive OS onboarding${c_off}"
+  say ""
+  say "The guided setup lives in ${c_bold}START.md${c_off}. In Claude Code, just say:"
+  say "  ${c_dim}\"read START.md and onboard me\"${c_dim}${c_off}"
+  say ""
+  say "The agent then walks you through identity, the method, the memory layer,"
+  say "and connecting your tools, one step at a time, until you're live."
+}
+
+cmd_memory() {
+  local mode="${1:-install}"
+  case "$mode" in
+    install|"") bash "$HIVE_ROOT/harness/memory/install.sh"; cmd_status | grep -i memory || true;;
+    *) warn "usage: hive memory install";;
+  esac
 }
 
 cmd_sync()   { git -C "$HIVE_ROOT" pull --ff-only && ok "synced"; }
@@ -97,7 +125,9 @@ cmd_wrapup() {
 }
 
 case "${1:-help}" in
+  start)   cmd_start;;
   init)    shift; cmd_init "$@";;
+  memory)  shift; cmd_memory "$@";;
   status)  cmd_status;;
   doctor)  cmd_doctor;;
   onboard) shift; cmd_onboard "$@";;

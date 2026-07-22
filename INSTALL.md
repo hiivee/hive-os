@@ -9,21 +9,21 @@
 ## O prompt que o cliente cola no Claude dele
 
 ```
-Instale o Hive OS, o meu harness de trabalho com IA, neste ambiente. Faça exatamente:
+Instale o Hive OS neste ambiente. Faça exatamente:
 
 1. git clone https://github.com/hiivee/hive-os ~/hive-os
-2. cd ~/hive-os && ./bin/hive init "{{NOME}}"
-3. ./bin/hive skills link      (liga as skills no meu Claude, em ~/.claude/skills)
-4. ./bin/hive status           (me mostre o resultado)
+2. cd ~/hive-os
+3. Abra o arquivo START.md e execute ele: você vira o meu guia de onboarding e me
+   conduz passo a passo, conversando, até tudo estar ligado (identidade, o método,
+   a camada de memória e as ferramentas que eu uso).
 
-Depois abra ~/hive-os/CLAUDE.md e passe a operar por ele: brainstorm antes de construir,
-prova E2E antes de dizer "pronto", mudanças cirúrgicas, reporte em altitude.
-
-Quando terminar, me confirme que está pronto e me pergunte o que eu quero construir primeiro.
+Fale comigo na minha língua, um passo de cada vez, sem jargão. Comece agora.
 ```
 
-Troca `{{NOME}}` pelo nome da pessoa (ex: `Fabio`, `Olavo`). É só isso. O Claude dela
-executa os 4 passos, e ela sai com **120 skills + o método + a rede de agentes** ligados.
+É só isso, um prompt único, sem trocar nada. O Claude da pessoa **lê o `START.md` e
+conversa com ela**: pergunta quem ela é, liga as 120 skills e o método, instala os quatro
+cérebros de memória, conecta as ferramentas dela, e prova que tudo está vivo. No fim,
+pergunta o que ela quer construir primeiro. O harness se instala falando.
 
 ---
 
